@@ -6,6 +6,34 @@ import (
 	"time"
 )
 
+//**Условие**:
+//
+//Реализуй функцию `StartBatchProcessor(ctx context.Context, input <-chan int)`, которая:
+//
+//- Собирает числа из канала `input` в батчи по максимум 5 элементов.
+//- Если в течение 2 секунд батч не собран — обрабатывает то, что есть.
+//- Обработка батча — это просто `fmt.Println("Processed batch:", batch)`.
+//- Выход из функции должен происходить при отмене контекста (`ctx.Done()`).
+//
+//**Дополнительно**:
+//
+//- Отмена должна происходить либо чере`з context.WithTimeout`, либо вручную через `cancel()` — попробовать оба варианта
+//
+//Начальный код с вызовом(доработать)
+//
+//```go
+//func main() {
+//    // инициализация канала
+//    /* создание контекста  */
+//
+//    go StartBatchProcessor(ctx, input)
+//
+//    // сбор данных
+//
+//    fmt.Println("Main: processing stopped")
+//}
+//```
+
 func StartBatchProcessor(ctx context.Context, input <-chan int) {
 	var batch []int
 	timeout := 2 * time.Second

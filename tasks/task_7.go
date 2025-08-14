@@ -7,9 +7,29 @@ import (
 	"strconv"
 
 	"github.com/golang-jwt/jwt/v5"
-	//"strconv"
 )
 
+// > Напиши две функции:
+// >
+// > 1. `AddJWTToContext(ctx context.Context, userID int) (context.Context, error)`
+// > 2. `ExtractUserIDFromContext(ctx context.Context) (int, error)`
+// >
+// > `AddJWTToContext` должен:
+// >
+// > - Создавать JWT-токен (используй `github.com/golang-jwt/jwt/v5`).
+// > - Зашифровывать в него `userID`.
+// > - Возвращать новый `context.Context`, в который записан JWT-токен.
+// >
+// > `ExtractUserIDFromContext` должен:
+// >
+// > - Извлекать JWT-токен из контекста.
+// > - Расшифровывать `userID`.
+// > - Вывести его на экран
+// >
+// > **Дополнительное условие**:
+// >
+// > Создай горутину, в которой будет использоваться `ExtractUserIDFromContext`. Покажи, что передача контекста работает и данные можно безопасно извлекать между горутинами.
+// >
 type contextKey string
 
 var jwtKey = contextKey("jwtKey")

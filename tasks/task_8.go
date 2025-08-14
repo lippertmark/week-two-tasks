@@ -8,6 +8,17 @@ import (
 	"time"
 )
 
+// Напишите функцию FetchURLs(urls []string) map[string]string, которая:
+//
+// Принимает слайс URL-адресов.
+// Конкурентно делает HTTP-запросы к каждому URL.
+// Собирает результаты (код ответа и часть тела) в map[string]string, где:
+// ключ — URL
+// значение — содержимое ответа (ограниченное, например, 100 символами)
+// Использует sync.WaitGroup и sync.Mutex для защиты записи в map.
+// В случае ошибки записывает "error" как значение.
+// Добавить таймаут 5 секунд на каждый HTTP-запрос (через http.Client{Timeout:}).
+
 const maxBodyLength = 100
 const timeoutOfRequest = 7 * time.Second
 

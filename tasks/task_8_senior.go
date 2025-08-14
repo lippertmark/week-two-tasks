@@ -10,6 +10,9 @@ import (
 	"time"
 )
 
+// 4. Ограничить общее количество параллельных запросов (например, максимум 10 одновременно через семафор — chan struct{}).
+// А лучше использовать для этого паттерн worker pool Go by Example: Worker Pools
+
 const maxBodyLengthSenior = 100
 const timeoutOfRequestSenior = 1 * time.Second
 

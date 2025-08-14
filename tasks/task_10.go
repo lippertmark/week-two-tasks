@@ -2,6 +2,17 @@ package tasks
 
 import "fmt"
 
+//2. **Fan-Out (разделение работы между несколькими воркерами)**
+//Задача: Создайте функцию, которая принимает канал с задачами и распределяет их между N горутинами.
+//
+//```go
+//    // Разделить канал на n каналов,
+//    // которые получают сообщения в циклическом порядке.
+//    func Split(ch <-chan int, n int) []<-chan int
+//    ```
+//
+//Реализацию можно подсмотреть тут https://golang-blog.blogspot.com/2019/11/pattern-fan-out.html
+
 func Split(in <-chan int, n int) []<-chan int {
 	result := make([]<-chan int, n)
 	for id := range n {

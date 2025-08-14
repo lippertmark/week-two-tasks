@@ -10,6 +10,9 @@ import (
 	"time"
 )
 
+// 2. Переписать код, чтобы использовать контекст отмены
+// 3. При первой ошибке отменять все остальные запросы
+
 const maxBodyLengthMiddle = 100
 const timeoutOfRequestMiddle = 2 * time.Second
 

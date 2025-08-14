@@ -7,6 +7,6 @@ import (
 )
 
 func main() {
-	tasks.Task7()
+	tasks.Task1()
 	fmt.Println("Goroutine num: ", runtime.NumGoroutine())
 }
